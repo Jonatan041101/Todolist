@@ -1,0 +1,494 @@
+@charset "UTF-8";
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+/* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.upercase {
+  text-transform: capitalize;
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none; /* Esto oculta la barra de desplazamiento */
+  font-family: GothamLight;
+  overflow-x: hidden;
+}
+
+select::-ms-expand {
+  display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
+  outline: none;
+  border: none;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 #ffffff;
+}
+
+/* Chrome, Edge and Safari */
+button {
+  cursor: pointer;
+}
+
+.input {
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  border-radius: 0.5em;
+  height: 2.8em;
+}
+.input__input {
+  padding: 0.3em 1em;
+  width: 85%;
+  outline: none;
+}
+.input__button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  height: 100%;
+  width: 15%;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  transition: 0.5s ease;
+  color: #7c5ff9;
+}
+.input__button:hover {
+  background: #7c5ff9;
+  color: #fff;
+}
+
+.addtask__container {
+  width: 20em;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.config {
+  background: #fff;
+  width: 25em;
+  padding: 1em 1.5em;
+  border-radius: 1em;
+  color: #000;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.config__text {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+}
+.config__p {
+  width: 100%;
+  word-break: break-all;
+}
+.config__editable {
+  outline: none;
+  border: none;
+}
+.config__update {
+  height: 100%;
+  color: #7c5ff9;
+  transition: 0.5s;
+  padding: 0.2em;
+  border-radius: 0.4em;
+}
+.config__update:hover {
+  background: #7c5ff9;
+  color: #fff;
+}
+.config__config {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+.config__colors {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.config__section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.config__color {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0.15em solid #c0c0c0;
+}
+.config__check {
+  height: 1em;
+  width: 1em;
+}
+.config__important {
+  padding: 0 0.2em;
+}
+.config__newnote {
+  background: #7c5ff9;
+  color: #fff;
+  width: 9em;
+  height: 2em;
+  border-radius: 0.8em;
+  align-self: flex-end;
+  transition: 0.4s ease;
+}
+.config__newnote:hover {
+  background: #3300ff;
+}
+
+.allnotes {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+  height: 30em;
+  overflow: auto;
+}
+.allnotes__filter {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.1em;
+}
+.allnotes__cero {
+  align-self: center;
+}
+.allnotes__article {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1em;
+  height: 2em;
+  background: #fff;
+  color: #000;
+  border-radius: 0.5em;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+.allnotes__up {
+  width: 95%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0 0.2em;
+}
+.allnotes__color {
+  height: 100%;
+  width: 5%;
+}
+.allnotes__p {
+  width: 85%;
+  outline: none;
+}
+.allnotes__buttons {
+  padding: 0 0.2em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+}
+.allnotes__delete {
+  transition: 0.5s ease;
+  color: #cc3131;
+}
+.allnotes__delete:hover {
+  color: #fff;
+  background: #cc3131;
+}
+.allnotes__update {
+  transition: 0.5s ease;
+  color: #7c5ff9;
+}
+.allnotes__update:hover {
+  color: #fff;
+  background: #7c5ff9;
+}
+.allnotes__add {
+  color: #7c5ff9;
+  transition: 0.5s ease;
+}
+.allnotes__add:hover {
+  background: #7c5ff9;
+  color: #fff;
+}
+.allnotes__close {
+  color: #cc3131;
+  transition: 0.5s ease;
+}
+.allnotes__close:hover {
+  color: #fff;
+  background: #cc3131;
+}
+
+.btn {
+  padding: 0.3em 0.1em;
+  border-radius: 0.2em;
+}
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #fff;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+.switch {
+  padding: 0.2em;
+  background: #fff;
+  width: 3em;
+  border-radius: 1em;
+  cursor: pointer;
+}
+.switch__area {
+  transform: translateX(0em);
+  transition: 0.5s ease;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  background: #bbbbbb;
+}
+
+[data-move=true] {
+  transform: translateX(1.15em);
+  background: #9bde32;
+}
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8em;
+  height: 100vh;
+  background: #192a32;
+}
+
+/*# sourceMappingURL=main.css.map */

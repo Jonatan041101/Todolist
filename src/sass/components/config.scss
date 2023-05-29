@@ -1,0 +1,72 @@
+.config {
+  background: #fff;
+  width: 25em;
+  padding: 1em 1.5em;
+  // height: 30em;
+  border-radius: 1em;
+  color: #000;
+  @include flex(column, nowrap, center, center, 1em);
+  &__text {
+    @include flex(row, nowrap, center, center, 0.5em);
+    width: 100%;
+  }
+  &__p {
+    // width: 18em;
+    width: 100%;
+    word-break: break-all;
+  }
+  &__editable {
+    outline: none;
+    border: none;
+  }
+  &__update {
+    height: 100%;
+    color: $violet;
+    transition: 0.5s;
+    padding: 0.2em;
+    border-radius: 0.4em;
+    &:hover {
+      background: $violet;
+      color: #fff;
+    }
+  }
+  &__config {
+    width: 100%;
+    @include flex(row, nowrap, space-between, center, 0.5em);
+  }
+  &__colors {
+    @include flex(column, nowrap, center, center, 0.5em);
+  }
+  &__h3 {
+  }
+  &__section {
+    @include flex(row, nowrap, center, center, 0.5em);
+  }
+  &__color {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0.15em solid #c0c0c0;
+  }
+  &__check {
+    height: 1em;
+    width: 1em;
+    // background: #000;
+  }
+  &__important {
+    padding: 0 0.2em;
+  }
+  &__newnote {
+    background: $violet;
+    color: #fff;
+    width: 9em;
+    height: 2em;
+    border-radius: 0.8em;
+    align-self: flex-end;
+    transition: 0.4s ease;
+    &:hover {
+      background: #3300ff;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.switch {
+  padding: 0.2em;
+  background: #fff;
+  width: 3em;
+  border-radius: 1em;
+  cursor: pointer;
+  &__area {
+    transform: translateX(0em);
+    transition: 0.5s ease;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+    background: #bbbbbb;
+  }
+}
+[data-move='true'] {
+  transform: translateX(1.15em);
+  background: #9bde32;
+}

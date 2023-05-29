@@ -1,0 +1,77 @@
+.allnotes {
+  width: 100%;
+  max-width: 320px;
+  @include flex(column, nowrap, flex-start, center, 0.5em);
+  height: 30em;
+  overflow: auto;
+  &__filter {
+    width: 100%;
+    @include flex(row, nowrap, space-between, center, 0.1em);
+  }
+  &__cero {
+    align-self: center;
+  }
+  &__article {
+    width: 100%;
+    @include flex(row, nowrap, center, center, 0.1em);
+    height: 2em;
+    background: #fff;
+    color: #000;
+    border-radius: 0.5em;
+    overflow: hidden;
+    text-transform: capitalize;
+  }
+  &__up {
+    width: 95%;
+    @include flex(row, nowrap, center, center, 0.4em);
+    padding: 0 0.2em;
+  }
+  &__color {
+    height: 100%;
+    width: 5%;
+  }
+  &__p {
+    width: 85%;
+    outline: none;
+  }
+  &__buttons {
+    padding: 0 0.2em;
+    @include flex(row, nowrap, center, center, 0.4em);
+  }
+  &__delete {
+    transition: 0.5s ease;
+    color: $red;
+    &:hover {
+      color: #fff;
+      background: $red;
+    }
+  }
+  &__update {
+    transition: 0.5s ease;
+    color: $violet;
+    &:hover {
+      color: #fff;
+      background: $violet;
+    }
+  }
+  &__add {
+    color: $violet;
+    transition: 0.5s ease;
+    &:hover {
+      background: $violet;
+      color: #fff;
+    }
+  }
+  &__close {
+    color: $red;
+    transition: 0.5s ease;
+    &:hover {
+      color: #fff;
+      background: $red;
+    }
+  }
+}
+.btn {
+  padding: 0.3em 0.1em;
+  border-radius: 0.2em;
+}

@@ -1,0 +1,26 @@
+.input {
+  background: #fff;
+  color: #000;
+  @include flex(row, nowrap, center, center, 0.5em);
+  width: 100%;
+  border-radius: 0.5em;
+  height: 2.8em;
+  &__input {
+    padding: 0.3em 1em;
+    width: 85%;
+    outline: none;
+  }
+  &__button {
+    @include flex(row, nowrap, center, center, 0.5em);
+    height: 100%;
+    width: 15%;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    transition: 0.5s ease;
+    color: $violet;
+    &:hover {
+      background: $violet;
+      color: #fff;
+    }
+  }
+}
