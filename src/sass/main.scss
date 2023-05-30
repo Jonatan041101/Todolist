@@ -2,7 +2,8 @@
   './reset/reset.scss', './atoms/icon.scss', './atoms/input.scss',
   './components/addtask.scss', './components/modal.scss',
   './components/config.scss', './components/allnotes.scss',
-  './components/spinner.scss', './components/switch.scss';
+  './components/spinner.scss', './components/switch.scss',
+  './components/delete.scss';
 .main {
   @include flex(column, nowrap, center, center, 0.8em);
   height: 100vh;

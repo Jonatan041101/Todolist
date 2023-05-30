@@ -6,7 +6,7 @@ import { EvtChange } from './AddTask';
 
 interface Props {
   note: Note;
-  handleDelete: (id: string) => void;
+  handleDelete: (id: string, text: string) => void;
   handleUpdate: (id: string, text: string) => void;
 }
 
@@ -58,7 +58,7 @@ export default function Note({ handleDelete, note, handleUpdate }: Props) {
         <div className="allnotes__buttons">
           <button
             className="btn allnotes__delete"
-            onClick={() => handleDelete(note.id)}
+            onClick={() => handleDelete(note.id, note.note)}
           >
             <Icons icon="delete" />
           </button>

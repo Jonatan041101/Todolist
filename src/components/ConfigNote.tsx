@@ -35,7 +35,6 @@ export default function ConfigNote({}: Props) {
         selection.removeAllRanges();
         selection.addRange(range);
         refChange.current.focus();
-        console.log(refChange.current.textContent?.length);
       }
     }
   }, [configNote.changeNote]);
@@ -68,7 +67,6 @@ export default function ConfigNote({}: Props) {
       setNoteState(evt.currentTarget.textContent);
     }
   };
-  console.log({ newNote });
   const handleChangeColor = (evt: EvtClick, color: string) => {
     evt.stopPropagation();
     changeColor(color);

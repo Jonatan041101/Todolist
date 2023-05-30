@@ -14,11 +14,9 @@
   &__article {
     width: 100%;
     @include flex(row, nowrap, center, center, 0.1em);
-    height: 2em;
     background: #fff;
     color: #000;
     border-radius: 0.5em;
-    overflow: hidden;
     text-transform: capitalize;
   }
   &__up {
@@ -29,8 +27,11 @@
   &__color {
     height: 100%;
     width: 5%;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
   }
   &__p {
+    word-break: break-all;
     width: 85%;
     outline: none;
   }

@@ -225,6 +225,7 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
+  backdrop-filter: blur(1em);
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -234,7 +235,7 @@ button {
 
 .config {
   background: #fff;
-  width: 25em;
+  width: 20em;
   padding: 1em 1.5em;
   border-radius: 1em;
   color: #000;
@@ -349,11 +350,9 @@ button {
   justify-content: center;
   align-items: center;
   gap: 0.1em;
-  height: 2em;
   background: #fff;
   color: #000;
   border-radius: 0.5em;
-  overflow: hidden;
   text-transform: capitalize;
 }
 .allnotes__up {
@@ -368,8 +367,11 @@ button {
 .allnotes__color {
   height: 100%;
   width: 5%;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 .allnotes__p {
+  word-break: break-all;
   width: 85%;
   outline: none;
 }
@@ -479,6 +481,49 @@ button {
 [data-move=true] {
   transform: translateX(1.15em);
   background: #9bde32;
+}
+
+.delete {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 20em;
+  background: #fff;
+  border-radius: 1.5em;
+  color: #000;
+  padding: 0.5em;
+  text-align: center;
+}
+.delete__buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.delete__si {
+  background: #cc3131;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+.delete__si:hover {
+  transform: scale(1.1);
+}
+.delete__no {
+  background: rgb(155, 222, 50);
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+.delete__no:hover {
+  transform: scale(1.1);
 }
 
 .main {
