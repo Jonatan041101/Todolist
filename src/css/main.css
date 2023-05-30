@@ -353,7 +353,6 @@ button {
   background: #fff;
   color: #000;
   border-radius: 0.5em;
-  text-transform: capitalize;
 }
 .allnotes__up {
   width: 95%;
